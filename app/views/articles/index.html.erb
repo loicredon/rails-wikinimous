@@ -1,0 +1,8 @@
+<h1>My articles</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <li ><%= link_to article.title, article_path(article) %></li> <img src="../trash-solid.svg" />
+    <li><%= link_to 'delete article above', article_path(article.id), method: :delete %></li>
+  <% end %>
+</ul>
+<p><%= link_to 'create a new article', articles_new_path %><p/>
